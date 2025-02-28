@@ -1,0 +1,388 @@
+$purple: #4E4FFA;
+$lightpurple:	#2A2D54;
+
+a {
+  text-decoration: none;
+}
+
+@mixin wrapper ($wid: 100%, $marg: 0 auto, $maxWid: 1100px) {
+  width: $wid;
+  margin: $marg;
+  max-width: $maxWid;
+}
+
+.wrap {
+  @include wrapper;
+}
+
+.floating {
+  position: absolute;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #291c77;
+  color: white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 20px;
+  opacity: 0.8;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+  }
+
+  .arrow {
+    margin-left: 17px;
+    margin-top: 8px;
+  }
+}
+
+
+.herobanner {
+
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  background: url(../public/images/welcome-hero/welcome-banner.jpg);
+  height: 650px;
+  margin-top: -60px;
+  background-size: cover;
+  z-index: 1;
+
+
+
+  #overlay {
+    position: fixed;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 101.5%;
+    width: 100%;
+    background-color: rgb(42, 45, 84, 0.5);
+
+  }
+}
+
+header {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  color: white;
+  position: relative;
+  z-index: 3;
+
+  nav {
+    a {
+      color: white;
+      margin-right: 15px;
+     margin-top: 55px;
+
+      &:hover {
+        color: #4E4FFA;
+      }
+    }
+
+  }
+}
+
+.heading {
+  margin-top: 8%;
+  color: white;
+  z-index: 15;
+  h1{
+    margin-top: 40px;
+  }
+  p{
+    margin-top: 30px;
+  }
+}
+
+
+button {
+  //  margin-left: 45%;
+  padding: 10px 20px;
+  background-color: #4E4FFA;
+  color: white;
+}
+
+img {
+  // position: absolute;
+  left: 100px;
+  top: 100px;
+  z-index: -1;
+}
+
+.carmodel {
+  // margin-bottom: -10px;  
+  
+  .plantCard {
+    margin-top: 60px;
+    margin: 20px;
+    display: flex;
+    border-radius: 4px;
+    padding: 75px 25px;
+    flex-direction: column;
+    width: 250px;
+    &:hover{
+      background-color: #4E4FFA;
+
+    }
+    &:hover{
+      scale: 1.05;
+    }
+
+    .thumbnail {
+      // height: 200PX;
+      justify-content: center;
+      flex-direction: column;
+      display: flex;
+      padding: 20px 10px;
+
+      h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      span {
+        font-weight: bold;
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        width: 200px;
+        margin-bottom: -15px;
+      }
+      .bttm-line{
+        background-color: rgb(81, 33, 212);
+        height: 2px;
+        width: 20px;
+        border-radius: 50%;
+      }
+    }
+
+    a {
+      // background-color: $darkGray;
+      padding: 10px;
+      border-radius: 50px;
+    }
+  }
+}
+
+
+
+.carmodel {
+
+  
+  &>* {
+    width: 25%;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  margin-top: 10px;
+
+
+  .plantCard {
+
+    border: 2px solid black;
+    align-items: center;
+    justify-content: space-between;
+    // padding: 45px 45px;
+    margin-left: 10px;
+    width: 300px;
+    height: 330px;
+    justify-content: center;
+
+    .thumbnail {
+      justify-content: space-between;
+
+      img {
+        height: 100px;
+        justify-content: space-between;
+        margin-top: 10px;
+        width: 100px;
+      }
+    }
+
+    .info {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding: 5px 1px 40px;
+
+      p {
+        margin-left: 10px;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.carsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .heading {
+    span {
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1{
+      margin-top: -2px;
+      margin-bottom: 60px;
+      color: black;
+      display: flex;
+      justify-content: center;
+    }
+    .bttm-line{
+      background-color: rgb(67, 22, 173);
+      height: 2px;
+      width: 150px;
+      margin-left: 450px;
+      margin-top: -40px;
+
+      // border-radius: 30px;
+    }
+    .loopsection {
+      // &>* {
+      //   width: 30%;
+      // }
+  
+      @include wrapper;
+      display: flex;
+      flex-direction: row;
+  
+      .plantCard {
+        margin-top: 20px;
+        width: 250px;
+        margin-left: 15px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+  
+        .thumbnail {
+          height: 180px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: end;
+          border: solid 1px #a9a9a9;
+          padding: 15px 0 0 0;
+  
+          img {
+            height: 80px;
+            width: 150px;
+          }
+  
+          p {
+            padding: -5px;
+            border-top: solid 1px #959ba7;
+            color: #959ba7;
+            margin-bottom: 10px;
+          }
+        }
+  
+        .info {
+          color: black;
+  
+          span {
+            margin-right: 150px;
+            align-items: start;
+          }
+        }
+      }
+    }
+  }
+}
+
+.BrandSection {
+  @include wrapper;
+  display: flex;
+  justify-content: space-around;
+  // margin-top: 100%;
+  margin-left: 10%;
+
+  img {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+footer{
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  background-color:$lightpurple;
+  color: white;
+  margin-top: 100px;
+}
+.logo-parent{
+  display: flex;
+  margin-right: 5%;
+  svg{
+    fill: white;
+  }
+}
+
+
+
+// .aboutMe{
+//   text-align: center;
+// }
+
+.aboutMe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  height: 700px;
+  width: 100%;
+  background-color: lightblue ;
+  color: blueviolet;
+
+  
+
+  h2 {
+    margin-left: -90px;
+    font-size: 50px;
+    font-weight: bolder;
+  }
+
+  span {
+    margin-left: -500px;
+    font-size: large;
+    color: darkgoldenrod;
+  }
+
+  p {
+    margin-left: 70px;
+    color: rgb(235, 61, 61);
+  }
+}
+
+
+
+
